@@ -8,8 +8,24 @@ public class Inscripcion {
     public Alumno alumno;
     public List<Materia> materiasAInscribir;
 
+    public Alumno getAlumno() {
+        return alumno;
+    }
+
+    public void setAlumno(Alumno alumno) {
+        this.alumno = alumno;
+    }
+
+    public List<Materia> getMateriasAInscribir() {
+        return materiasAInscribir;
+    }
+
+    public void setMateriasAInscribir(List<Materia> materiasAInscribir) {
+        this.materiasAInscribir = materiasAInscribir;
+    }
+
     public boolean aprobado(){
-        List<Materia> materiasNecesariasParaInscripcion = this.materiasAInscribir
+        List<Materia> materiasNecesariasParaInscripcion = this.getMateriasAInscribir()
                         .stream()
                         .flatMap(m -> m.getMateriasCorrelativas().stream())
                         .distinct() //Saco las materias que puedan aparecer +1 vez
@@ -18,4 +34,4 @@ public class Inscripcion {
         return alumno.tieneTodasAprobadas(materiasNecesariasParaInscripcion);
     }
 
-}git 
+}git
