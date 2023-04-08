@@ -12,6 +12,11 @@ public class Inscripcion {
         return alumno;
     }
 
+    public Inscripcion(Alumno alumno, List<Materia> materiasAInscribir) {
+        this.alumno = alumno;
+        this.materiasAInscribir = materiasAInscribir;
+    }
+
     public void setAlumno(Alumno alumno) {
         this.alumno = alumno;
     }
@@ -25,13 +30,16 @@ public class Inscripcion {
     }
 
     public boolean aprobado(){
-        List<Materia> materiasNecesariasParaInscripcion = this.getMateriasAInscribir()
-                        .stream()
-                        .flatMap(m -> m.getMateriasCorrelativas().stream())
-                        .distinct() //Saco las materias que puedan aparecer +1 vez
-                        .collect(Collectors.toList())
-                        ;
-        return alumno.tieneTodasAprobadas(materiasNecesariasParaInscripcion);
+        if (this.getMateriasAInscribir().isEmpty()){
+            return false;
+        }else {
+            List<Materia> materiasNecesariasParaInscripcion = this.getMateriasAInscribir()
+                    .stream()
+                    .flatMap(m -> m.getMateriasCorrelativas().stream())
+                    .distinct() //Saco las materias que puedan aparecer +1 vez
+                    .collect(Collectors.toList());
+            return alumno.tieneTodasAprobadas(materiasNecesariasParaInscripcion);
+        }
     }
 
-}git
+}
