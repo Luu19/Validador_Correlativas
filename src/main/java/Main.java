@@ -12,7 +12,7 @@ public class Main {
         Materia pdp = new Materia("PdP", List.of(discreta, ayed));
         Materia am2 = new Materia("am2", List.of(am1));
 
-        Alumno leo = new Alumno("Leo", List.of(am1, discreta, ayed));
+        Alumno leo = new Alumno("Lucia", List.of(am1, discreta, ayed));
 
         Inscripcion inscripcionDeLeo = new Inscripcion(leo, List.of());
 
