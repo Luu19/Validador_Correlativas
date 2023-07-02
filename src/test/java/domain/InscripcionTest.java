@@ -15,11 +15,11 @@ public class InscripcionTest {
         Materia pdp = new Materia("PdP", List.of(discreta, ayed));
         Materia am2 = new Materia("am2", List.of(am1));
 
-        Alumno leo = new Alumno("Leo", List.of(am1, discreta, ayed));
+        Alumno lucia = new Alumno("Lucia", List.of(am1, discreta, ayed));
 
-        Inscripcion inscripcionDeLeo = new Inscripcion(leo, List.of(am2, pdp));
+        Inscripcion inscripcionDelucia = new Inscripcion(lucia, List.of(am2, pdp));
 
-        Assert.assertTrue(inscripcionDeLeo.aprobado());
+        Assert.assertTrue(inscripcionDelucia.aprobado());
     }
     @Test
     public void inscripcionDesaprobada(){
@@ -32,11 +32,11 @@ public class InscripcionTest {
         Materia ads = new Materia("ads", List.of(syo, ayed));
         Materia dds = new Materia("dds", List.of(syo, discreta, ayed, pdp, ads));
 
-        Alumno leo = new Alumno("Leo", List.of(ads, discreta, ayed, syo));
+        Alumno lucia = new Alumno("Lucia", List.of(ads, discreta, ayed, syo));
 
-        Inscripcion inscripcionDeLeo = new Inscripcion(leo, List.of(dds, am2));
+        Inscripcion inscripcionDelucia = new Inscripcion(lucia, List.of(dds, am2));
 
-        Assert.assertFalse(inscripcionDeLeo.aprobado());
+        Assert.assertFalse(inscripcionDelucia.aprobado());
     }
 
 }
