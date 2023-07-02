@@ -12,10 +12,10 @@ public class Main {
         Materia pdp = new Materia("PdP", List.of(discreta, ayed));
         Materia am2 = new Materia("am2", List.of(am1));
 
-        Alumno leo = new Alumno("Lucia", List.of(am1, discreta, ayed));
+        Alumno lucia = new Alumno("Lucia", List.of(am1, discreta, ayed));
 
-        Inscripcion inscripcionDeLeo = new Inscripcion(leo, List.of());
+        Inscripcion inscripcionDelucia = new Inscripcion(lucia, List.of());
 
-        System.out.println("El estado de inscripcion de " + leo.getNombreAlumno() + " es " + inscripcionDeLeo.aprobado());
+        System.out.println("El estado de inscripcion de " + lucia.getNombreAlumno() + " es " + inscripcionDelucia.aprobado());
     }
 }
